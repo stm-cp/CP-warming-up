@@ -1,6 +1,5 @@
 //워밍업
 function 워밍업() {
-
 }
 
 $(document).ready(function () {
