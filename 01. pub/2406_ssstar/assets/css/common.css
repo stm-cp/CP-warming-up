@@ -1,1 +1,200 @@
-@charset "UTF-8";
+.skip_nav {
+  position: relative;
+  z-index: 500;
+}
+
+.skip_nav a {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: #000;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 6px;
+}
+
+.skip_nav a:focus,
+.skip_nav a:active {
+  top: 0;
+  z-index: 499;
+}
+
+.wrap {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background: #fff;
+}
+header > div {
+  height: 80px;
+}
+header > div.needflex {
+  justify-content: space-between;
+  align-items: center;
+}
+header > div .header_util {
+  flex: 0 1 60%;
+}
+header > div .header_util.needflex {
+  align-items: center;
+  gap: 0 40px;
+}
+header > div .header_util .gnb_list {
+  flex-grow: 1;
+}
+header > div .header_util .gnb_list.needflex {
+  justify-content: space-between;
+}
+header > div .header_util .btn_search {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.cont_sec .sect_tit {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  margin-bottom: 6rem;
+}
+.cont_sec .sect_tit::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 25px;
+  background: #fff;
+}
+.cont_sec.main_visual .swiperMv {
+  width: 100%;
+  height: 800px;
+}
+.cont_sec.main_visual .swiperMv .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.cont_sec.main_visual .swiperMv .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.cont_sec.main_visual .swiperMv .swiper-wrapper .swiper-slide.mv01 {
+  background: url(/assets/images/img_slider_01.png) no-repeat center center;
+  background-size: cover;
+}
+.cont_sec.main_visual .swiperMv .swiper-wrapper .swiper-slide.mv02 {
+  background: rgba(0, 0, 0, 0.5) url(/assets/images/img_slider_02.jpg) no-repeat center center;
+  background-size: cover;
+}
+.cont_sec.main_visual .swiperMv .swiper-wrapper .swiper-slide.mv03 {
+  background: url(/assets/images/img_slider_03.jpg) no-repeat center center;
+  background-size: cover;
+}
+.cont_sec.text {
+  padding: 10rem 0;
+}
+.cont_sec.text .needflex {
+  gap: 0 120px;
+  align-items: stretch;
+}
+.cont_sec.text .needflex .textbox.left {
+  flex: 0 0 30%;
+  text-align: right;
+}
+.cont_sec.text .needflex .textbox.left h3 {
+  font-size: 4.5rem;
+  position: relative;
+}
+.cont_sec.text .needflex .textbox.left h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background: #000;
+}
+.cont_sec.text .needflex .textbox.right b {
+  display: block;
+  margin-bottom: 3rem;
+}
+.cont_sec.text .needflex .textbox.right p {
+  margin-bottom: 3rem;
+}
+.cont_sec.text .needflex .textbox.right .btn.readmore {
+  border: 2px solid #071734;
+  padding: 15px 40px;
+}
+.cont_sec.pckg {
+  padding: 10rem 0 30rem;
+  background: #071734;
+}
+.cont_sec.pckg .pckg_list.needflex {
+  flex-wrap: wrap;
+  gap: 5rem 3.5%;
+}
+.cont_sec.pckg .pckg_list.needflex .list_item {
+  flex: 0 0 31%;
+  min-height: 478px;
+  background: url(/assets/images/bg_contbox_01.png) no-repeat center center;
+  background-size: auto 450px;
+}
+.cont_sec.pckg .pckg_list.needflex .list_item .fig_desc {
+  padding: 1.5rem 5rem;
+  position: relative;
+}
+.cont_sec.pckg .pckg_list.needflex .list_item .fig_desc p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.cont_sec.pckg .pckg_list.needflex .list_item .fig_desc p span {
+  margin-left: auto;
+}
+.cont_sec.pckg .pckg_list.needflex .list_item .fig_desc dl dt {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.cont_sec.pckg .pckg_list.needflex .list_item .fig_desc .btn.readmore {
+  padding: 15px 30px;
+  background: #000;
+  color: #fff;
+  position: absolute;
+  bottom: -50%;
+  transform: translateY(-50%);
+}
+.cont_sec.pckg .pckg_list.needflex .list_item::marker {
+  content: none;
+}
+.cont_sec.dstntn {
+  position: relative;
+  top: -20rem;
+}
+.cont_sec.dstntn .dst_list .list_item {
+  text-align: center;
+  flex: 0 0 25%;
+}
+.cont_sec.dstntn .dst_list .list_item::marker {
+  content: none;
+}
+.cont_sec.dstntn .dst_list .list_item figure {
+  height: 230px;
+}
+.cont_sec.dstntn .dst_list .list_item figure img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
