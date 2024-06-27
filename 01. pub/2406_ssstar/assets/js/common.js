@@ -1,8 +1,15 @@
-//워밍업
-function 워밍업() {
 
-}
 
 $(document).ready(function () {
-  워밍업() // 간단한 역할을 설명
+  // tab action
+  $('.tab_list_item').on('click',function(e){
+    e.preventDefault();
+    
+    var Idx = $(this).index();
+    $('.tab_list_item').removeClass('active');
+    $(this).addClass('active');
+    $('.tabview_list_item').removeClass('active').eq(Idx).addClass('active')
+    
+  })
 });
+

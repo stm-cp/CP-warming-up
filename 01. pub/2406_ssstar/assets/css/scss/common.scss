@@ -1,2 +1,4 @@
 @charset "UTF-8";
-@import "main";
+@import "fonts"; // 00. font family
+@import "main"; // 01. main page
+@import "mixins"; // 02. mixins
