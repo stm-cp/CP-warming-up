@@ -3,3 +3,9 @@
         @content;
     }
 }
+
+@mixin minWidth($size) {
+    @media screen and (min-width: $size) {
+        @content;
+    }
+}
