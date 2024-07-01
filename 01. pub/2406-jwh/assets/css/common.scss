@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+.display-none { display: none; }
+
 /* header */
 header {
 	z-index: 1000;
@@ -32,6 +34,7 @@ header {
 			width: 20px;
 			height: 20px;
 			background: url(../images/icon_search.png) no-repeat center/cover;
+			cursor: pointer;
 		}
 	}
 }
@@ -41,6 +44,37 @@ header {
 	max-width: 1280px;
 	height: 100%;
 	margin: 0 auto;
+}
+/* swiper */
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+	color: #fff !important;
+	&::after {
+		font-size: 30px !important;
+	}
+}
+.swiper .swiper-button-prev {
+	left: 20px !important;
+}
+.swiper .swiper-button-next {
+	right: 20px !important;
+}
+.swiper .swiper-pagination {
+	bottom:  40px !important;
+}
+.swiper .swiper-pagination-bullet, 
+.swiper .swiper-pagination-bullet-active {
+	width: 10px;
+	height: 10px;
+	margin: 0 3px !important;
+	border: 1px solid #fff;
+	opacity: 1;
+}
+.swiper .swiper-pagination-bullet {
+	background-color: transparent;
+}
+.swiper .swiper-pagination-bullet-active {
+	background-color: #fff;
 }
 /* banner */
 .banner_section {
@@ -152,8 +186,19 @@ header {
 	.section-inner {
 		.packages_tit {
 			h2 {
+				position: relative;
 				font-size: 5rem;
 				color: #fff;
+				&::before {
+					content: '';
+					position: absolute;
+					top: -30px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 2px;
+					height: 30px;
+					background-color: #fff;
+				}
 			}
 		}
 		.package_list_wrap {
@@ -189,7 +234,8 @@ header {
 								color: #E7D5AD;
 								font-size: 1.8rem;
 								i {
-									
+									display: inline-block;
+									transform: translateY(-5px);
 									font-size: 1.2rem;
 								}
 							}
@@ -228,9 +274,20 @@ header {
 		transform: translateY(200px);
 		.destination_tit {
 			h2 {
+				position: relative;
 				margin-bottom: 50px;
 				color: #fff;
 				font-size: 5rem;
+				&::before {
+					content: '';
+					position: absolute;
+					top: -30px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 2px;
+					height: 30px;
+					background-color: #fff;
+				}
 			}
 		}
 		.destination_list_wrap {
@@ -267,8 +324,20 @@ header {
 	.section-inner {
 		.withus_tit {
 			h2 {
+				position: relative;
+				color: #000;
 				font-size: 5rem;
 				margin-bottom: 50px;
+				&::before {
+					content: '';
+					position: absolute;
+					top: -30px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 2px;
+					height: 30px;
+					background-color: #000;
+				}
 			}
 		}
 		.withus_wrap {
@@ -337,8 +406,19 @@ header {
 	.section-inner {
 		.reviews_tit {
 			h2 {
+				position: relative;
 				color: #fff;
 				font-size: 5rem;
+				&::before {
+					content: '';
+					position: absolute;
+					top: -30px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 2px;
+					height: 30px;
+					background-color: #fff;
+				}
 			}
 		}
 		.img_btn_wrap {
@@ -419,8 +499,19 @@ header {
 	.section-inner {
 		.recommend_tit {
 			h2 {
+				position: relative;
 				color: #000;
 				font-size: 5rem;
+				&::before {
+					content: '';
+					position: absolute;
+					top: -30px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 2px;
+					height: 30px;
+					background-color: #000;
+				}
 			}
 		}
 		.recommend_logo_wrap {
@@ -454,8 +545,19 @@ header {
 		.section-inner {
 			.post_tit {
 				h2 {
+					position: relative;
 					color: #000;
 					font-size: 5rem;
+					&::before {
+						content: '';
+						position: absolute;
+						top: -30px;
+						left: 50%;
+						transform: translateX(-50%);
+						width: 2px;
+						height: 30px;
+						background-color: #000;
+					}
 				}
 			}
 			.post_list_wrap {
@@ -690,6 +792,7 @@ footer {
 						a {
 							color: #D3D3D3;
 							font-size: 1.6rem;
+							white-space: nowrap;
 						}	
 					}
 					.map, .tel, .email {
