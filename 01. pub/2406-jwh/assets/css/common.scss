@@ -1,10 +1,22 @@
 @charset "utf-8";
 
 .display-none { display: none; }
-
+/* skip nav */
+#skipNav {
+	z-index: 1000;
+	position: absolute;
+	a {
+		opacity: 0;
+		transition: 0.2s;
+		&:focus, 
+		&:active {
+			opacity: 1;
+		}
+	}
+}
 /* header */
 header {
-	z-index: 1000;
+	z-index: 990;
 	position: fixed;
 	width: 100%;
 	background-color: #FEF8EC;
@@ -27,6 +39,25 @@ header {
 				li {
 					margin: 0 25px;
 					white-space: nowrap;
+					a {
+						position: relative;
+						color: #3A5065;
+					}
+					&:nth-of-type(2),
+					&:nth-of-type(3),
+					&:nth-of-type(4) {
+						a::after {
+							content: '';
+							position: absolute;
+							top: 50%;
+							right: -12px;
+							transform: translateY(-50%) rotate(90deg);
+							
+							width: 6px;
+							height: 10px;
+							background: url(../images/icon_arrow_gray.png) no-repeat center/contain;
+						}
+					}
 				}
 			}	
 		}
@@ -703,6 +734,7 @@ header {
 				font-size: 2rem;
 				font-style: italic;
 				text-decoration: underline;
+				cursor: default;
 			}
 		}
 	}
