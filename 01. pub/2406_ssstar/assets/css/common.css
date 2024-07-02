@@ -687,13 +687,13 @@ footer .footer_bottom p {
   padding: 1.5rem 5rem;
   position: relative;
 }
-.cont_sec .sig_form .list_item .fig_desc p {
+.cont_sec .sig_form .list_item .fig_desc > p {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
   color: #bbb;
 }
-.cont_sec .sig_form .list_item .fig_desc p span {
+.cont_sec .sig_form .list_item .fig_desc > p span {
   margin-left: auto;
   color: #cfc497;
 }
@@ -704,6 +704,48 @@ footer .footer_bottom p {
 }
 .cont_sec .sig_form .list_item .fig_desc dl dd {
   color: #bbb;
+}
+.cont_sec .sig_form .list_item .fig_desc dl dd.needflex {
+  gap: 0 8px;
+  font-size: 1.3rem;
+  flex-wrap: nowrap;
+}
+.cont_sec .sig_form .list_item .fig_desc dl dd.needflex > p {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+}
+.cont_sec .sig_form .list_item .fig_desc dl dd.needflex > p .post_wrtr {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0 8px;
+}
+.cont_sec .sig_form .list_item .fig_desc dl dd.needflex > p .post_wrtr::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: relative;
+  display: block;
+  background: url(/assets/images/icon_person.png) no-repeat center center;
+  background-size: 10px;
+}
+.cont_sec .sig_form .list_item .fig_desc dl dd.needflex > p:first-of-type::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 2px;
+  height: 1.3rem;
+  background: #cfc497;
+}
+.cont_sec .sig_form .list_item .fig_desc dl dd.needflex > p.post_date::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: relative;
+  display: block;
+  background: url(/assets/images/icon_time.png) no-repeat center center;
+  background-size: 10px;
 }
 .cont_sec .sig_form .list_item::marker {
   content: none;
@@ -1132,6 +1174,7 @@ footer .footer_bottom p {
   top: -3rem;
   background: #fff;
   padding: 8rem 10rem 5rem;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 .cont_sec.rcrv .tabview_list .tabview_list_item {
   text-align: center;

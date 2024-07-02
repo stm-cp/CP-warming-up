@@ -539,7 +539,7 @@ footer {
                 padding: 1.5rem 5rem;
                 position: relative;
 
-                p {
+                > p {
                     display: flex;
                     align-items: center;
                     margin-bottom: 1rem;
@@ -561,6 +561,54 @@ footer {
                     dd {
 
                         color: #bbb;
+
+                        &.needflex {
+                            gap: 0 8px;
+                            font-size: 1.3rem;
+                            flex-wrap: nowrap;
+
+                            > p {
+                                display: flex;
+                                align-items: center;
+                                gap: 0 8px;
+                                .post_wrtr {
+                                    display: flex;
+                                    align-items: center;
+                                    flex-wrap: nowrap;
+                                    gap: 0 8px;
+                                    &::before {
+                                        content: '';
+                                        width: 10px;
+                                        height: 10px;
+                                        position: relative;
+                                        display: block;
+                                        background: url(/assets/images/icon_person.png) no-repeat center center;
+                                        background-size: 10px;
+                                    }
+                                }
+                                &:first-of-type {
+                                    &::after {
+                                        content: '';
+                                        display: block;
+                                        position: relative;
+                                        width: 2px;
+                                        height: 1.3rem;
+                                        background: #cfc497;
+                                    }
+                                }
+                                &.post_date {
+                                    &::before {
+                                        content: '';
+                                        width: 10px;
+                                        height: 10px;
+                                        position: relative;
+                                        display: block;
+                                        background: url(/assets/images/icon_time.png) no-repeat center center;
+                                        background-size: 10px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1082,6 +1130,7 @@ footer {
             top: -3rem;
             background: #fff;
             padding: 8rem 10rem 5rem;
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 
             .tabview_list_item {
                 text-align: center;
