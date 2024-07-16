@@ -115,7 +115,14 @@
 		
 		pswInput.addEventListener('blur', validatePassword)
 
-		
+		submitBtn.addEventListener('click', () => {
+			const isEmailValid = validateEmail();
+			const isPasswordValid = validatePassword();
+
+			if (isEmailValid && isPasswordValid) {
+				alert(`Account created successfully! email: ${emailInput.value}`);
+			} 
+		});
 	</script>
 </body>
 </html>
