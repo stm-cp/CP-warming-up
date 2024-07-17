@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Accordion</title>
+	<link rel="stylesheet" href="./assets/reset.css"/>
+	<link rel="stylesheet" href="./assets/style.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="acco_box_wrap">
+			<ul>
+				<li class="acco_list">
+					<button aria-expanded="true">DESCRIPTION</button>
+					<div class="acco_cont">
+						The Home Speaker 700 brings room-rocking bass and 360° lifelike sound to a space-saving size. Turn it up and feel the difference.
+					</div>
+				</li>
+				<li class="acco_list def">
+					<button aria-expanded="false">PRODUCT DETAILS</button>
+					<div class="acco_cont">
+						<div>
+							<p class="acco_title">KEY</p>
+							<ul class="acco_cont_list">
+								<li>Compact design</li>
+								<li>Built-in voice assistant</li>
+								<li>Six present buttons</li>
+							</ul>
+						</div>
+						<div>
+							<p class="acco_title">DIMENSION</p>
+							<ul class="acco_cont_list">
+								<li>H 16 cm</li>
+								<li>W 14.2 cm</li>
+								<li>D 10.2 cm</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="acco_list def">
+					<button aria-expanded="false">MORE INFO</button>
+					<div class="acco_cont">
+						<div>
+							<p class="acco_title">WHAT'S IN THE</p>
+							<ul class="acco_cont_list">
+								<li>Home Speaker 700</li>
+								<li>Power Cable</li>
+							</ul>
+						</div>
+						<div>
+							<p class="acco_title">TERMS & CONDITIONS</p>
+							<ul class="acco_cont_list">
+								<li>Find terms &</li>
+								<li>conditions for your</li>
+								<li>local store here.</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="acco_box_wrap">
+			<ul>
+				<li class="acco_list def">
+					<button aria-expanded="false">DESCRIPTION</button>
+					<div class="acco_cont">
+						The Home Speaker 700 brings room-rocking bass and 360° lifelike sound to a space-saving size. Turn it up and feel the difference.
+					</div>
+				</li>
+				<li class="acco_list">
+					<button aria-expanded="true">PRODUCT DETAILS</button>
+					<div class="acco_cont">
+						<div>
+							<p class="acco_title">KEY</p>
+							<ul class="acco_cont_list">
+								<li>Compact design</li>
+								<li>Built-in voice assistant</li>
+								<li>Six present buttons</li>
+							</ul>
+						</div>
+						<div>
+							<p class="acco_title">DIMENSION</p>
+							<ul class="acco_cont_list">
+								<li>H 16 cm</li>
+								<li>W 14.2 cm</li>
+								<li>D 10.2 cm</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="acco_list def">
+					<button aria-expanded="false">MORE INFO</button>
+					<div class="acco_cont">
+						<div>
+							<p class="acco_title">WHAT'S IN THE</p>
+							<ul class="acco_cont_list">
+								<li>Home Speaker 700</li>
+								<li>Power Cable</li>
+							</ul>
+						</div>
+						<div>
+							<p class="acco_title">TERMS & CONDITIONS</p>
+							<ul class="acco_cont_list">
+								<li>Find terms &</li>
+								<li>conditions for your</li>
+								<li>local store here.</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		const accBox = document.querySelectorAll('.acco_box_wrap')
+
+		accBox.forEach((box) => {
+			const accoList = box.querySelectorAll('.acco_list')
+
+			accoList.forEach((list) => {
+				const button = list.querySelector('button');
+				list.addEventListener('click', ()=> {
+					accoList.forEach((el)=> {
+						const btn = el.querySelector('button');
+                    	btn.setAttribute('aria-expanded', 'false');
+						el.classList.add('def');
+					})
+
+					button.setAttribute('aria-expanded', 'true');
+					list.classList.remove('def')
+				})
+			})
+		})
+
+		
+	</script>
+</body>
+</html>
