@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Validation</title>
+	<link rel="stylesheet" href="./assets/reset.css"/>
+	<link rel="stylesheet" href="./assets/style.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="main_wrap">
+			<img src="./assets/images/Oval.png" alt="로그인 아이콘"/>
+			<div class="main">
+				<p class="title">Create account</p>
+				<p class="sub">Already a member? <a href="#">Log in</a></p>
+			</div>
+		</div>
+		<div class="input_wrap">
+			<div class="input_el email_wrap">
+				<p class="title">EMAIL</p>
+				<input type="email" id="email_input" class="input"/>
+				<p class="email_blank msg">Can't be blank</p>
+    			<p class="email_incorrect msg">Incorrect email</p>
+			</div>
+			<div class="input_el psw_wrap">
+				<p class="title">PASSWORD</p>
+				<input type="password" id="pswd_input" class="input"/>
+				<p class="psw_blank msg">Can't be blank</p>
+    			<p class="psw_long msg">Must be at least 8 characters long</p>
+			</div>
+			<div class="submit_wrap">
+				<button id="submit_btn">
+					SIGN UP
+				</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		let emailInput = document.getElementById('email_input')
+		let emailBlank = document.querySelector('.email_blank')
+		let emailInc = document.querySelector('.email_incorrect')
+
+		let pswInput = document.getElementById('pswd_input')
+		let pswBlank = document.querySelector('.psw_blank')
+		let pswLong = document.querySelector('.psw_long')
+
+		let submitBtn = document.getElementById('submit_btn');
+		const pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
+
+		const validateEmail = () => {
+			const emailValue = emailInput.value;
+			const parentClassList = emailInput.parentElement.classList;
+
+			if (!emailValue) {
+				parentClassList.add('red');
+				emailBlank.style.display = 'block';
+				emailInc.style.display = 'none';
+				return false;
+			} else if (!pattern.test(emailValue)) {
+				parentClassList.add('red');
+				emailBlank.style.display = 'none';
+				emailInc.style.display = 'block';
+				return false;
+			} else {
+				parentClassList.remove('red');
+				emailBlank.style.display = 'none';
+				emailInc.style.display = 'none';
+				return true;
+			}
+		}
+
+		const validatePassword = () => {
+			const passwordValue = pswInput.value;
+			const parentClassList = pswInput.parentElement.classList;
+
+			if (!passwordValue) {
+				parentClassList.add('red');
+				pswBlank.style.display = 'block';
+				pswLong.style.display = 'none';
+				return false;
+			} else if (passwordValue.length < 8) {
+				parentClassList.add('red');
+				pswBlank.style.display = 'none';
+				pswLong.style.display = 'block';
+				return false;
+			} else {
+				parentClassList.remove('red');
+				pswBlank.style.display = 'none';
+				pswLong.style.display = 'none';
+				return true;
+			}
+		};
+
+		emailInput.addEventListener('focus', function() {
+			let eiClass = emailInput.parentElement.classList;
+			if(eiClass.contains('red')) {
+				eiClass.remove('red');
+				emailBlank.style.display = 'none';
+				emailInc.style.display = 'none';
+			}
+		})
+
+		
+		emailInput.addEventListener('blur', validateEmail)
+
+		pswInput.addEventListener('focus', function() {
+			let eiClass = pswInput.parentElement.classList;
+			if(eiClass.contains('red')) {
+				eiClass.remove('red');
+				pswBlank.style.display = 'none';
+				pswLong.style.display = 'none';
+			}
+		})
+		
+		pswInput.addEventListener('blur', validatePassword)
+
+		submitBtn.addEventListener('click', () => {
+			const isEmailValid = validateEmail();
+			const isPasswordValid = validatePassword();
+
+			if (isEmailValid && isPasswordValid) {
+				alert(`Account created successfully! email: ${emailInput.value}`);
+			} 
+		});
+	</script>
+</body>
+</html>
