@@ -37,15 +37,18 @@
 		</div>
 	</div>
 	<script>
-		let emailInput = document.getElementById('email_input')
-		let emailBlank = document.querySelector('.email_blank')
-		let emailInc = document.querySelector('.email_incorrect')
+		const getId = (id) => document.getElementById(id);
+		const getSel = (selector) => document.querySelector(selector);
 
-		let pswInput = document.getElementById('pswd_input')
-		let pswBlank = document.querySelector('.psw_blank')
-		let pswLong = document.querySelector('.psw_long')
+		const emailInput = getId('email_input')
+		const emailBlank = getSel('.email_blank')
+		const emailInc = getSel('.email_incorrect')
 
-		let submitBtn = document.getElementById('submit_btn');
+		const pswInput = getId('pswd_input')
+		const pswBlank = getSel('.psw_blank')
+		const pswLong = getSel('.psw_long')
+
+		const submitBtn = getId('submit_btn');
 		const pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
 
 		const validateEmail = () => {
